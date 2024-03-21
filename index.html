@@ -23,10 +23,13 @@
         deleteButton.addEventListener('click', function () {
           this.parentElement.remove();
         });
+        let checkbox = document.createElement('input');
+        checkbox.setAttribute('type', 'checkbox');
         let newTodo = document.createElement('li');
         newTodoText = document.createTextNode(inputValue);
-        newTodo.appendChild(deleteButton);
+        newTodo.appendChild(checkbox);
         newTodo.appendChild(newTodoText);
+        newTodo.appendChild(deleteButton);
         list.appendChild(newTodo);
       });
     </script>
