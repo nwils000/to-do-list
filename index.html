@@ -5,5 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
-  <body></body>
+  <body>
+    <section>
+      <input type="text" class="input-field" />
+      <ul class="list"></ul>
+      <button class="add-to-do">Add todo</button>
+    </section>
+    <script>
+      let input = document.querySelector('.input-field');
+      let addTodo = document.querySelector('.add-to-do');
+      let list = document.querySelector('.list');
+
+      addTodo.addEventListener('click', () => {
+        let inputValue = input.value;
+        let deleteButton = document.createElement('button');
+        deleteButton.textContent = 'delete';
+        deleteButton.addEventListener('click', function () {
+          this.parentElement.remove();
+        });
+        let newTodo = document.createElement('li');
+        newTodoText = document.createTextNode(inputValue);
+        newTodo.appendChild(deleteButton);
+        newTodo.appendChild(newTodoText);
+        list.appendChild(newTodo);
+      });
+    </script>
+  </body>
 </html>
+
+<!-- things to have:
+     todo option example: clean dishes
+                          needs delete button 
+    needs add to do button
+    
+    input field to write what the todo is going to be
+
+    when add to do button is clicked it will create a new element
+    fill the new element with whats currently in the input field
+    clear the input field
+
+    delete button deletes all li in the ul
+    
+-->
